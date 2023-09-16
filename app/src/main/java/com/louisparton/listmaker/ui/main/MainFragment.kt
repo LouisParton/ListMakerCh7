@@ -1,7 +1,7 @@
+package com.louisparton.listmaker.ui.main
 import androidx.recyclerview.widget.LinearLayoutManager
 
-private lateinit var binding: MainFragmentBinding
-package com.louisparton.listmaker.ui.main
+
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import com.louisparton.listmaker.R
 
 class MainFragment : Fragment() {
-
+    private lateinit var binding: MainFragmentBinding
     companion object {
         fun newInstance() = MainFragment()
     }
@@ -24,12 +24,9 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = MainFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-        return inflater.inflate(R.layout.main_fragment, container, false)
 
         binding.listsRecyclerview.layoutManager = LinearLayoutManager(requireContext())
-
-        binding.listsRecycleview.adapter = ListSelectionRecyclerViewAdapter()
+        binding.listsRecyclerview.adapter = ListSelectionRecyclerViewAdapter()
         return binding.root
     }
 
